@@ -1,10 +1,20 @@
 
 function startCountdown() {
+ let endTime;
 
-    const endTime = new Date();
-    endTime.setHours(endTime.getHours() + 32);
-    endTime.setMinutes(endTime.getMinutes() + 0);
-    endTime.setSeconds(endTime.getSeconds() + 60)
+    const savedTime = localStorage.getItem('endTime');
+
+    if (savedTime) {
+        endTime = new Date(savedTime);
+    } else {
+        endTime = new Date();
+        endTime.setHours(endTime.getHours() + 32);
+        endTime.setMinutes(endTime.getMinutes() + 0);
+        endTime.setSeconds(endTime.getSeconds() + 60);
+
+        // Сохраняем новое время в localStorage
+        localStorage.setItem('endTime', endTime.toString());
+    }
 
     function update() {
         const timeDiff = endTime - new Date();
