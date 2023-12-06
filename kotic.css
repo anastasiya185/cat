@@ -1,0 +1,46 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Занимает 100% высоты экрана */
+    margin: 0; /* Убираем внешние отступы для body */
+     background-color: #10457a; /* Темно-синий цвет фона */
+    color: #228B22;
+}
+
+h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 36px;
+    color: #228B22; /* Зеленый цвет */
+}
+
+#timer {
+    font-size: 172px; /* Увеличиваем размер цифр */
+    margin-top: 20px;
+        color: #228B22;
+    border: 2px solid #4169E1; /* Бордер вокруг цифр */
+    padding: 10px; /* Внутренний отступ для бордера */
+    border-radius: 5px; /* Закругленные углы для бордера */
+    animation: fadeIn 1s ease-in-out; /* Анимация появления */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; } /* Начальная прозрачность 0 */
+    to { opacity: 1; } /* Конечная прозрачность 1 */
+}
+
+
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    #timer {
+        font-size: 100px;
+        margin-top: 10px;
+        padding: 8px;
+    }
+}
